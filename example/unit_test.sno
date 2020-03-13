@@ -1,0 +1,169 @@
+//@coding=utf-8
+var a = 1
+println(println, a, "nihao", 1)
+a = 2
+var b = a + 1
+println(println, a, b, "nihao", 1, 1.2, nil)
+b, c = b - 2
+println(println, a, b, c, "nihao" * 3, 1, 1.2, nil)
+{
+    var a = 10
+    b, c = 11, 12
+    println(a, b, c)
+}
+println(println, a, b, c)
+
+println(if(a){return 1}else{return 2})
+println(if(0){return 1}else{return 2})
+println(if(nil){return 1}else{return 2})
+println(if(false){return 1}else{return 2})
+println(if(true){return 1}else{return 2})
+
+println(nil == nil)
+println(nil != nil)
+println(2 > 1)
+println(1 > 1)
+println(1 > 2)
+println(2 >= 1)
+println(1 >= 1)
+println(1 >= 2)
+
+println(2 < 1)
+println(1 < 1)
+println(1 < 2)
+println(2 <= 1)
+println(1 <= 1)
+println(1 <= 2)
+
+println(8 | 4)
+println(7 & 4)
+println(7 ^ 4)
+println(8 || nil)
+println(8 && nil)
+println(~8)
+println(!8)
+
+var i = 1
+while (i < 10)
+{
+    println(i)
+    i = i + 1
+    if (i > 3)
+    {
+        break
+    }
+}
+var i = 1
+var j = 1
+while (i <= 9)
+{
+    while (j <= 9)
+    {
+        if (j > i)
+        {
+            break
+        }
+        print(j, "*", i, "=", i * j, "  ")
+        j = j + 1
+    }
+    println()
+    i = i + 1
+    j = 1
+}
+
+func add(a, b)
+{
+    return a, b
+}
+var c = add(1, 2)
+println(a, b)
+
+var GeneratorHelper = func()
+{
+    var index = 0
+    return func()
+    {
+        index = index + 1
+        return index
+    }
+}
+
+var GeneratorHelper2 = GeneratorHelper
+
+println(GeneratorHelper == GeneratorHelper2)
+
+var Generator = GeneratorHelper()
+
+println(Generator())
+println(Generator())
+println(Generator())
+println(Generator())
+
+var Generator2 = GeneratorHelper2()
+println(Generator2())
+println(Generator2())
+println(Generator2())
+println(Generator2())
+
+var a, b = 1, 2
+println(a, b)
+a, b = b, a
+println(a, b)
+a, b = b, a
+println(a, b)
+
+var arr = [1, 2, 3, "abc"]
+for (v in arr)
+{
+    println(v)
+}
+for (k in range(len(arr) - 1))
+{
+    println(k, arr[k])
+}
+arr[10] = 3
+arr.remove(6, 2)
+arr.insert(6)
+for (k in range(len(arr) - 1))
+{
+    println(k, arr[k])
+}
+var arr2 = arr
+println(arr, arr2, [1, 2, 3, "abc"])
+arr2 = []
+println(arr, arr2, [1, 2, 3, "abc"], arr.remove)
+var map = {[1] = 1, [nil] = 2, ["a"] = 2, c = 7}
+for (k, v in map)
+{
+    println(k, v, map[k])
+}
+var map2 = map
+for (k, v in map2)
+{
+    println(k, v, map[k])
+}
+map2["b"] = "b"
+println("size map", len(map), len(map2), map.a, map.b, map.c)
+println(map, map2, {})
+map2 = {[nil] = 3,}
+println(map, map2, {})
+
+func testreturn()
+{
+    return 1, 2, 3
+}
+
+println("a", testreturn())
+println(testreturn())
+println("a", testreturn(), 1)
+println(testreturn(), 1)
+
+println(type(nil, true, 1, 1.2, arr, map, testreturn))
+
+println("dofile")
+println(dofile("example/paint_love.sno"))
+println(dofile("example/paint_love.sno"))
+println("import")
+println(import("example.paint_love"))
+println(import("example.paint_love"))
+

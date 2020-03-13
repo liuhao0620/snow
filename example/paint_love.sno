@@ -1,0 +1,27 @@
+//@coding=utf-8
+var min_y = -1.5
+var max_y = 1.5
+var y = max_y
+println("  " * 12, "Tom *  Jerry")
+while (y >= min_y)
+{
+    var min_x = -1.5
+    var max_x = 1.5
+    var x = min_x
+    while (x <= max_x)
+    {
+        var temp = x * x + y * y - 1
+        if ((temp * temp * temp - x * x * y * y * y) <= 0)
+        {
+            print("*")
+        }
+        else 
+        {
+            print(" ")
+        }
+        x = x + 0.1
+    }
+    println()
+    y = y - 0.12
+}
+println("  " * 13, "爱你哟！")
