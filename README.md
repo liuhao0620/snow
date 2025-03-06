@@ -1,5 +1,5 @@
 # snow
-a new script progtamming language named snow
+a new script programming language named snow
 简单易用，只有一个源文件
 
 # 编译可执行文件
